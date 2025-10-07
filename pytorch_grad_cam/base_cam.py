@@ -96,7 +96,7 @@ class BaseCAM:
         input_tensor = input_tensor.to(self.device)
 
         if self.compute_input_gradient:
-            input_tensor = torch.autograd.Variable(input_tensor, requires_grad=True)
+            input_tensor = input_tensor.requires_grad_(True)
 
         self.outputs = outputs = self.activations_and_grads(input_tensor)
 
